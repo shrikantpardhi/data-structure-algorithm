@@ -7,6 +7,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {4, 2, 5, 1, 6, 3};
         mergeSort(arr, 0, arr.length - 1);
+        System.out.println("Sorted Array: "+ Arrays.toString(arr));
     }
 
     static void mergeSort(int[] arr, int p, int r) {
@@ -37,6 +38,15 @@ public class MergeSort {
         for (int i = 0; i < rightLength; i++) {
             right[i] = arr[q + i + 1];
         }
+
+        //you can use System.arrayCopy() method to create left and right array
+        /*
+        * System.arraycopy(arr, p, left, 0, leftLength);
+        * System.arraycopy(arr, q + 1, right, 0, rightLength);
+        * */
+
+        //print left and right array
+        System.out.println("left: "+ Arrays.toString(left) +", right: "+ Arrays.toString(right));
 
         int i = 0, j = 0, k = p;
         //compare two arrays and add the smaller element at the p location onwards
